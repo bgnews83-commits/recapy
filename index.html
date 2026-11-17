@@ -44,5 +44,33 @@ button:hover{background:var(--dark)}
     <div class="card"><span>10</span><p>Account Settings</p></div>
   </div>
 </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script>
+const sb = supabase.createClient(
+  'https://mqfrbyhgchwlalssvryg.supabase.co',
+  'sb_publishable_HIl5OArsWOwB9P_7Go25HA_CYtjtiyH'
+);
+const box = document.createElement('div');
+box.style.cssText = 'position:fixed;top:10px;right:10px;z-index:9999';
+document.body.appendChild(box);
+function show(user) {
+  box.innerHTML = '';
+  const b = document.createElement('button');
+  b.style.cssText = 'padding:10px 14px;border:0;border-radius:8px;background:#e11d2e;color:#fff;font-weight:600';
+  if (user) {
+    b.textContent = 'Logout (' + user.email + ')';
+    b.onclick = () => sb.auth.signOut();
+  } else {
+    b.textContent = 'Login with Google';
+    b.onclick = () => sb.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: location.origin + location.pathname }
+    });
+  }
+  box.appendChild(b);
+}
+sb.auth.getSession().then(({ data }) => show(data.session?.user));
+sb.auth.onAuthStateChange((_e, s) => show(s?.user));
+</script>
 </body>
                                 </html>

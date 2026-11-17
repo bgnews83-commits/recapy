@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Recapy — AI Movie Recap Studio</title>
+<style>
+:root{--red:#E52246;--dark:#C9183A;--bg:#FFF8FA;--text:#211B20;--sub:#858085}
+*{box-sizing:border-box;margin:0;font-family:Arial,sans-serif}
+body{background:var(--bg);color:var(--text)}
+header{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;background:#fff;border-bottom:1px solid #f0dde2}
+.logo{display:flex;align-items:center;gap:10px;font-weight:bold}
+.logo b{background:var(--red);color:#fff;border-radius:10px;padding:6px 10px}
+.logo small{display:block;color:var(--sub);font-weight:normal;font-size:11px}
+select{padding:8px;border-radius:8px;border:1px solid #e5cfd5}
+main{padding:18px;max-width:900px;margin:auto}
+h2{margin-bottom:14px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.card{background:#fff;border-radius:16px;padding:18px;box-shadow:0 2px 8px rgba(229,34,70,.08);cursor:pointer}
+.card:hover{border:1px solid var(--red)}
+.card span{color:var(--red);font-weight:bold}
+button{background:var(--red);color:#fff;border:0;border-radius:12px;padding:12px 18px;margin-bottom:16px;font-size:15px}
+button:hover{background:var(--dark)}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><b>R</b><div>Recapy<small>Movie Recap Studio</small></div></div>
+  <select><option>မြန်မာ</option><option>English</option></select>
+</header>
+<main>
+  <h2>Dashboard</h2>
+  <button>+ New Recap Project</button>
+  <div class="grid">
+    <div class="card"><span>01</span><p>Upload Movie</p></div>
+    <div class="card"><span>02</span><p>Recap Settings</p></div>
+    <div class="card"><span>03</span><p>AI Script Generator</p></div>
+    <div class="card"><span>04</span><p>Voiceover Studio</p></div>
+    <div class="card"><span>05</span><p>Subtitle Editor</p></div>
+    <div class="card"><span>06</span><p>Scene Editor</p></div>
+    <div class="card"><span>07</span><p>Logo &amp; Branding</p></div>
+    <div class="card"><span>08</span><p>Video Export</p></div>
+    <div class="card"><span>09</span><p>Project History</p></div>
+    <div class="card"><span>10</span><p>Account Settings</p></div>
+  </div>
+</main>
+</body>
+                                </html>

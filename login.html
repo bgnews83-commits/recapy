@@ -56,8 +56,7 @@ $('lang').onchange = e => { lang = e.target.value; try{localStorage.setItem('lan
 $('go').onclick = async () => {
   $('go').disabled = true; $('err').textContent = '';
   const { error } = await sb.auth.signInWithOAuth({
-    provider: 'google',
-    options: { redirectTo: location.origin + '/recapy/index.html' }
+   options: { redirectTo: location.origin + '/recapy/' }
   });
   if (error) { $('err').textContent = T[lang].e; $('go').disabled = false; }
 };
